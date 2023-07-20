@@ -21,6 +21,7 @@ namespace Project
             DigHandler();
             Player();
             Girl();
+            Sheriff();
         }
 
         private void Girl()
@@ -31,11 +32,11 @@ namespace Project
         private void Player()
         {
             var player = Container.InstantiatePrefabForComponent<PlayerMonoInstaller>(PlayerPrefab, new Vector3(4.2f, 0.29f, -4.53f), Quaternion.Euler(-12.5f, -196.8f, 15.3f), null);
+        }
 
-            //Container
-            //    .Bind<PlayerMonoInstaller>()
-            //    .FromInstance(player)
-            //    .AsSingle();
+        private void Sheriff()
+        {
+            var sheriff = Container.InstantiatePrefabForComponent<SheriffMonoInstaller>(SheriffPrefab, new Vector3(-0.54f, 0, 1.03f), Quaternion.Euler(0, 0, 0), null);
         }
 
         private void DigHandler()
