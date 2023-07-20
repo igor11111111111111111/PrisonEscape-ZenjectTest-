@@ -1,22 +1,26 @@
 using UnityEngine;
 using Zenject;
 
-public class DigHandler : MonoBehaviour
+namespace Project
 {
-    private GameData _data;
-    private bool _isDigActive;
-
-    [Inject]
-    private void Init(DigButton digButton, GameData data)
+    public class DigHandler : MonoBehaviour
     {
-        _data = data;
-        digButton.OnPressed += (active) => _isDigActive = active;
-    }
+        private GameData _data;
+        private bool _isDigActive;
 
-    private void Update()
-    {
-        if (!_isDigActive) return;
+        [Inject]
+        private void Init(DigButton digButton, GameData data)
+        {
+            _data = data;
+            digButton.OnPressed += (active) => _isDigActive = active;
+        }
 
-        _data.Progress.Change();
+        private void Update()
+        {
+            if (!_isDigActive) return;
+
+            _data.Progress.Change();
+        }
     }
 }
+

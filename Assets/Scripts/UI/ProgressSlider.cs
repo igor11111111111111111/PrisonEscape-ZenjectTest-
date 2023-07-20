@@ -2,19 +2,23 @@
 using UnityEngine.UI;
 using Zenject;
 
-public class ProgressSlider : MonoBehaviour
+namespace Project
 {
-    [SerializeField]
-    private Slider _slider;
-
-    [Inject]
-    private void Init(GameData data)
+    public class ProgressSlider : MonoBehaviour
     {
-        data.Progress.OnValueChanged += Refresh;
-    }
+        private Slider _slider;
 
-    private void Refresh(float normalizedValue)
-    {
-        _slider.value = normalizedValue;
+        [Inject]
+        private void Init(GameData data)
+        {
+            _slider = GetComponent<Slider>();
+            data.Progress.OnValueChanged += Refresh;
+        }
+
+        private void Refresh(float normalizedValue)
+        {
+            _slider.value = normalizedValue;
+        }
     }
 }
+
