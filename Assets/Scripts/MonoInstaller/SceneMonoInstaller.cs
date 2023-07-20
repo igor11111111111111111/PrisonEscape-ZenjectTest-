@@ -11,6 +11,7 @@ namespace Project
         public Slider Progress;
         public PlayerMonoInstaller PlayerPrefab;
         public GirlMonoInstaller GirlPrefab;
+        public SheriffMonoInstaller SheriffPrefab;
 
         public override void InstallBindings()
         {

@@ -3,10 +3,10 @@ using Zenject;
 
 namespace Project
 {
-    public class PlayerController
+    public class PlayerController : IController
     {
         private Animator _animator;
-
+         
         [Inject]
         private void Init(GameData data, Animator animator, Transform transform, DigButton digButton)
         {

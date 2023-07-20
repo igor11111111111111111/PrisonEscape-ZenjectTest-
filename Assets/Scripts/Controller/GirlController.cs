@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Project
 {
-    public class GirlController
+    public class GirlController : IController
     {
         private Animator _animator;
 
@@ -16,12 +16,12 @@ namespace Project
                 if (active)
                 {
                     _animator.Play("Look");
-                    //transform.position = new Vector3(4.7f, 0.186f, -4.867f); transform.rotation = Quaternion.Euler(-23.29f, -158.66f, 16.58f);
+                    transform.position = new Vector3(2.96f, 0f, -2.66f); transform.rotation = Quaternion.Euler(0, -134.7f, 0);
                 }
                 else
                 {
                     _animator.Play("Sit");
-                    //transform.position = new Vector3(4.2f, 0.29f, -4.53f); transform.rotation = Quaternion.Euler(-12.5f, -196.8f, 15.3f);
+                    transform.position = new Vector3(3.72f, 0.155f, -3f); transform.rotation = Quaternion.Euler(0, -166.7f, 0);
                 }
             };
         }
